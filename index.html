@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Givenquan - Innovating Tomorrow</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: #4C9ED9;
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        header .logo h1:hover {
+            color: #FFD700;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        header .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        header nav ul {
+            display: flex;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, #4C9ED9, #FFD700);
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: #FFD700;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background-color: #a6822d;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        .services h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Image Section */
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 80px 20px;
+        }
+
+        .image-section .image {
+            width: 48%;
+            height: 300px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .packages h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+
+        .package-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .package-card {
+            background-color: #FF6347;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .package-card p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .package-card .price {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #FFD700;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a6822d;
+        }
+
+        footer {
+            background-color: #4C9ED9;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-btn img {
+            margin-right: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .services .service-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .package-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-cards {
+                grid-template-columns: 1fr;
+            }
+
+            header nav ul {
+                display: none;
+            }
+
+            header .hamburger {
+                display: block;
+                color: white;
+            }
+
+            header.active nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 80px;
+                left: 20px;
+                background-color: #4C9ED9;
+                padding: 20px;
+                width: 100%;
+            }
+
+            header.active .hamburger {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Givenquan</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <h1>Innovating Tomorrow, Today</h1>
+            <p>Your one-stop solution for software development, AI systems, and digital marketing.</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Software Development</h3>
+                <p>We develop custom software solutions tailored to meet your business needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom AI Systems</h3>
+                <p>Leverage the power of AI to automate and optimize your operations.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Consulting</h3>
+                <p>Get expert advice on implementing AI in your business and operations.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Marketing Solutions</h3>
+                <p>Boost your brand with data-driven marketing strategies and creative campaigns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <div class="image" style="background-image: url('aebo.jpg');"></div>
+        <div class="image" style="background-image: url('mbalz.jpg');"></div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <h2>Our Packages</h2>
+        <div class="package-cards">
+            <div class="package-card">
+                <h3>Basic</h3>
+                <p>Starting from R1000</p>
+                <div class="price">R1000</div>
+            </div>
+            <div class="package-card">
+                <h3>Standard</h3>
+                <p>Starting from R3000</p>
+                <div class="price">R3000</div>
+            </div>
+            <div class="package-card">
+                <h3>Premium</h3>
+                <p>Starting from R15000</p>
+                <div class="price">R15000</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"Givenquan's expertise transformed our business processes. We saw incredible results within the first month!"</p>
+                <h4>- Phikolomzi Xesibe</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their custom AI solutions are a game-changer. Highly recommend their services!"</p>
+                <h4>- Thandeka Mavundla</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="mailto:ntamnaniabonga999@gmail.com" method="post" enctype="text/plain">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <section class="whatsapp">
+        <a href="https://wa.me/27684423555" target="_blank" class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" width="50" height="50">
+            Chat with us on WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Givenquan. All rights reserved.</p>
+        <p>Address: Countryview Midrand, Central Port Elizabeth</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const header = document.querySelector('header');
+            header.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
